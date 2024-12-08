@@ -1,0 +1,6 @@
+parameters:
+    reportUnmatchedIgnoredErrors: true
+    paths:
+        - .
+    excludePaths:
+        - vendor
