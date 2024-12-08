@@ -1,0 +1,12 @@
+{
+    "name": "zeleniy/composer-as-maven",
+    "description": "Implementation of Maven's build lifecycle with Composer",
+    "type": "metapackage",
+    "authors": [
+        {
+            "name": "Aleksandr Zelenin",
+            "email": "aleksandr.s.zelenin@gmail.com"
+        }
+    ],
+    "require": {}
+}
