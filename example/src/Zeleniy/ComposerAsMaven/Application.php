@@ -4,8 +4,8 @@ namespace Zeleniy\ComposerAsMaven;
 
 class Application {
 
-    public function run() {
-
+    public function run()
+    {
         return 127;
     }
 }

@@ -38,7 +38,11 @@
             "@composer diagnose",
             "@composer outdated",
             "@composer audit",
-            "@composer detect-unused-dependencies"
+            "@composer check-unused-dependencies",
+            "@composer check-magic-numbers",
+            "@composer check-copy-past",
+            "@composer check-code-style",
+            "@composer check-phpdoc"
         ],
         "mvn:initialize": [
             "echo mvn:initialize",
@@ -119,11 +123,7 @@
         ],
         "mvn:verify": [
             "echo mvn:verify",
-            "@composer mvn:post-integration-test",
-            "@composer detect-magic-numbers",
-            "@composer detect-copy-past",
-            "@composer check-code-style",
-            "@composer check-code-quality"
+            "@composer mvn:post-integration-test"
         ],
         "mvn:install": [
             "echo mvn:install",
@@ -149,19 +149,19 @@
             "@composer mvn:post-site"
         ],
         "check-code-style": [
-            "./vendor/bin/php-cs-fixer check --diff src/"
+            "./vendor/bin/php-cs-fixer check --diff"
         ],
-        "check-code-quality": [
+        "check-phpdoc": [
             "./vendor/bin/phpstan analyse --level 10"
         ],
-        "detect-magic-numbers": [
+        "check-magic-numbers": [
             "./vendor/bin/phpmnd src/"
         ],
-        "detect-copy-past": [
+        "check-copy-past": [
             "test -f \"vendor/bin/phpcpd.phar\" || curl --location https://phar.phpunit.de/phpcpd.phar --output vendor/bin/phpcpd.phar && chmod +x vendor/bin/phpcpd.phar",
             "./vendor/bin/phpcpd.phar --fuzzy src/"
         ],
-        "detect-unused-dependencies": [
+        "check-unused-dependencies": [
             "test -f \"vendor/bin/composer-unused.phar\" || curl --location https://github.com/composer-unused/composer-unused/releases/latest/download/composer-unused.phar --output vendor/bin/composer-unused.phar && chmod +x vendor/bin/composer-unused.phar",
             "vendor/bin/composer-unused.phar --output-format=default"
         ]
