@@ -2,3 +2,8 @@
 # Composer stuff.
 #
 vendor/
+#
+# Tools stuff.
+#
+.php-cs-fixer.cache
+.phpunit.cache
